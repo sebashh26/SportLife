@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <h3>
+    {{ description}}
+  </h3>
+  <img width="300" alt="Angular Logo" src="">
+  <registroJugadores></registroJugadores>
+</div>
+<div>
+  <input type="text" (keyup)="onNameKeyUp($event)">
+  <button (click)="getProfile()">Post Profile</button>
+
+</div>
+<br>
+<div *ngIf="found">
+  <span>{{name}}'s age is {{age}}</span>
+  <span>{{nombres}}</span>
+</div>
+<main>
+  <equipo-list></equipo-list>
+</main>
+
+

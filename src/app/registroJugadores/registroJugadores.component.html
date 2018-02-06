@@ -1,0 +1,8 @@
+		<h2>Componenete de {{nombre}}</h2>
+		<h3>StartUp: {{mejor_aplicacion}}</h3>
+		<h4 [style.background]="color" *ngIf="mostrar_equipo ==true">Equipo: {{nombre_equipo}}</h4>
+		<h4 [style.background]="'yellow'" *ngIf="mostrar_equipo !=true">Equipo: {{nombre_equipo_malo}}</h4>
+		<h2>Lista de Equipos</h2>
+		<ul>
+			<li *ngFor="let equipo of equipos">{{equipo}}</li>
+		</ul>
