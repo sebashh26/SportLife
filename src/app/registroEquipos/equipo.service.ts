@@ -1,31 +1,31 @@
 import { Injectable } from '@angular/core';
-import { Todo } from './todo';
+import { Equipo } from 'app/registroEquipos/equipo';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class TodoService {
+export class EquipoService {
   private baseUrl = 'http://localhost:8080';
 
   constructor(private http: Http) { }
 
-  getTodos():  Promise<Todo[]> {
+  getTodos():  Promise<Equipo[]> {
     return this.http.get(this.baseUrl + '/api/todos/')
       .toPromise()
-      .then(response => response.json() as Todo[])
+      .then(response => response.json() as Equipo[])
       .catch(this.handleError);
   }
 
-  createTodo(todoData: Todo): Promise<Todo> {
+  createTodo(todoData: Equipo): Promise<Equipo> {
     return this.http.post(this.baseUrl + '/api/todos/', todoData)
-      .toPromise().then(response => response.json() as Todo)
+      .toPromise().then(response => response.json() as Equipo)
       .catch(this.handleError);
   }
 
-  updateTodo(todoData: Todo): Promise<Todo> {
+  updateTodo(todoData: Equipo): Promise<Equipo> {
     return this.http.put(this.baseUrl + '/api/todos/' + todoData.id, todoData)
       .toPromise()
-      .then(response => response.json() as Todo)
+      .then(response => response.json() as Equipo)
       .catch(this.handleError);
   }
 
