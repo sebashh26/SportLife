@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { EquipoService } from 'app/registroEquipos/equipo.service';
 
 
 import { AppComponent } from './app.component';
@@ -17,11 +18,13 @@ import { FormsModule }   from '@angular/forms';
   ],
   imports: [
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserModule,
+    HttpModule
   ],
-  providers: [BrowserModule,
-    HttpModule,
-    HttpClientModule],
+  providers: [
+  EquipoService,
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
