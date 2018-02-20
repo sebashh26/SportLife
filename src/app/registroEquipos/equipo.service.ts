@@ -10,27 +10,27 @@ export class EquipoService {
   constructor(private http: Http) { }
 
   getTodos():  Promise<Equipo[]> {
-    return this.http.get(this.baseUrl + '/api/todos/')
+    return this.http.get(this.baseUrl + '/api/equipos/')
       .toPromise()
       .then(response => response.json() as Equipo[])
       .catch(this.handleError);
   }
 
-  createTodo(todoData: Equipo): Promise<Equipo> {
-    return this.http.post(this.baseUrl + '/api/todos/', todoData)
+  createEquipo(equipoData: Equipo): Promise<Equipo> {
+    return this.http.post(this.baseUrl + '/api/equipos/', equipoData)
       .toPromise().then(response => response.json() as Equipo)
       .catch(this.handleError);
   }
 
-  updateTodo(todoData: Equipo): Promise<Equipo> {
-    return this.http.put(this.baseUrl + '/api/todos/' + todoData.id, todoData)
+  updateEquipo(equipoData: Equipo): Promise<Equipo> {
+    return this.http.put(this.baseUrl + '/api/equipos/' + equipoData.id, equipoData)
       .toPromise()
       .then(response => response.json() as Equipo)
       .catch(this.handleError);
   }
 
-  deleteTodo(id: string): Promise<any> {
-    return this.http.delete(this.baseUrl + '/api/todos/' + id)
+  deleteEquipo(id: string): Promise<any> {
+    return this.http.delete(this.baseUrl + '/api/equipos/' + id)
       .toPromise()
       .catch(this.handleError);
   }
