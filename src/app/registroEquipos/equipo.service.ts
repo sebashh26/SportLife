@@ -9,7 +9,7 @@ export class EquipoService {
 
   constructor(private http: Http) { }
 
-  getTodos():  Promise<Equipo[]> {
+  getEquipos():  Promise<Equipo[]> {
     return this.http.get(this.baseUrl + '/api/equipos/')
       .toPromise()
       .then(response => response.json() as Equipo[])
