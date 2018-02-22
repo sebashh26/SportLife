@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class EquipoService {
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'http://localhost:8090';
 
   constructor(private http: Http) { }
 
